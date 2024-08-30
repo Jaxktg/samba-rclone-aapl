@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  samba:
+    image: samba-aapl
+    container_name: samba-server
+    devices:
+      - /dev/fuse:/dev/fuse
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor:unconfined
+    ports:
+      - "139:139"
+      - "445:445"
+      
+
