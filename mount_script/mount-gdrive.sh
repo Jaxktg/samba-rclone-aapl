@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 mkdir -p /mnt/backup-crypt
 mkdir -p /mnt/backup-crypt-xattr
 
@@ -11,7 +9,7 @@ mkdir -p /mnt/backup-crypt-xattr
 	--daemon \
 	--drive-pacer-burst 200 \
 	--drive-pacer-min-sleep 10ms \
-	--log-file ./rclone.log \
+	--log-file /app/logs/rclone.log \
 	--transfers 64 \
 	--checkers 64 \
 	--fast-list \

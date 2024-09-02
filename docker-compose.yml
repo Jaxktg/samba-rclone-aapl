@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   samba:
     image: samba-aapl
@@ -10,8 +8,10 @@ services:
       - SYS_ADMIN
     security_opt:
       - apparmor:unconfined
+    volumes:
+      - "./mount_script:/mount_script"
+      - "./logs:/app/logs"
+      - "./user.conf:/app/user.conf"
     ports:
       - "139:139"
       - "445:445"
-      
-
